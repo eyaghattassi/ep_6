@@ -81,25 +81,15 @@ void account_creation()
     scanf("%s", new_one.name);
     new_one.account_number=rand() % 789456132224797 + 1;
     printf("votre numéro du compte égale %d",new_one.account_number);
-    do
+     new_one. balance=0.0;
+    printf("tu veux intialer votre a zero ou dépôter d'argent");
+    scanf("%s",&reponse);
+    if (strcmp(reponse,"zero")!=0)
     {
-        printf("tu veux intialer votre a zero ou dépôter d'argent");
-        scanf("%s",&reponse);
-    } while (strcmp(reponse,"zero")!=0 && strcmp(reponse,"dépoter")!=0);
-    if (strcmp(reponse,"zero")==0)
-    {
-       new_one. balance=0.0;
+      deposit_money();
     }
-    else
-    {
-        deposit_money();
-    }
-    
     saveAccount(new_one);
     printf("félicitations,Compte créé avec succès!\n");
-    
-  
-
 }
 void saveAccount(account x){
  FILE *file=fopen("x.dat","ab");
