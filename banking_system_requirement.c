@@ -8,8 +8,9 @@ typedef struct
   char name[100];
   float balance;
 }account;
-account load_acc(int num);
 
+
+account load_acc(int num);
 void account_creation();
 void saveAccount(account x);
 void deposite_money();
@@ -144,3 +145,4 @@ void check_balance()
     account acco = load_acc(num_acc);
     printf("your bqnk balance is %f ",acco.balance);
 }
+
